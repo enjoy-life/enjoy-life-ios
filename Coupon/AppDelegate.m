@@ -8,17 +8,21 @@
 
 #import "AppDelegate.h"
 
+#define barColor [UIColor colorWithRed:243/255.0f green:90/255.0f blue:74/255.0f alpha:1.0f ]
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:243/255.0f green:90/255.0f blue:74/255.0f alpha:1.0f ]];
-    
+    [[UITabBar appearance] setTintColor:barColor];
+    [[UINavigationBar appearance] setBarTintColor:barColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            [UIFont systemFontOfSize:18], NSFontAttributeName, nil]];
+    
     
 
     return YES;

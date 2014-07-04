@@ -10,11 +10,14 @@
 #import "Seaport.h"
 #import "SeaportHttp.h"
 #import "SeaportWebViewBridge.h"
+#define barColor [UIColor colorWithRed:253/255.0f green:100/255.0f blue:84/255.0f alpha:1.0f ]
 
 @interface ViewController  () <UIWebViewDelegate,SeaportDelegate>
 @property (nonatomic,strong) Seaport* seaport ;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) UISearchBar *searchBar;
 @property(strong,nonatomic) SeaportWebViewBridge *bridge;
+@property BOOL loaded;
 @end
 
 @implementation ViewController
@@ -22,20 +25,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.loaded=NO;
     
     self.seaport = [Seaport sharedInstance];
     self.seaport.deletage=self;
     self.bridge = [SeaportWebViewBridge bridgeForWebView:self.webView param:@{@"city":@"shanghai",@"name": @"ltebean"} dataHandler:^(id data) {
         NSLog(@"receive data: %@",data);
+        [self performSegueWithIdentifier:@"category" sender:data];
     }];
+    self.webView.scrollView.showsVerticalScrollIndicator = NO;
+
+    self.searchBar = [[UISearchBar alloc] initWithFrame:self.view.bounds];
+    [self.searchBar sizeToFit];
+    self.searchBar.barTintColor=barColor;
+    self.navigationItem.titleView = self.searchBar;
 
 }
 
 
 -(void) viewWillAppear:(BOOL)animated  {
     [super viewWillAppear:animated];
-    self.webView.scrollView.showsVerticalScrollIndicator = NO;
-    [self refresh:nil];
+    if(!self.loaded){
+        [self refresh:nil];
+        self.loaded=YES;
+    }
 
     
 }
@@ -53,14 +66,11 @@
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-}
 
 - (IBAction)check:(id)sender {
     [self.seaport checkUpdate];
     [self.bridge sendData:@"btn-check clicked"];
-    
+
 }
 
 -(void)seaport:(Seaport*)seaport didStartDownloadPackage:(NSString*) packageName version:(NSString*) version
