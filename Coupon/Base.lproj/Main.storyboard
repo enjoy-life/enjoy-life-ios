@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ZkF-lz-sgF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - COUPON-->
+        <scene sceneID="PlK-FQ-Rrz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4W9-19-8ev" sceneMemberID="firstResponder"/>
+                <viewController id="zyj-iR-6cz" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u1c-Uv-A5a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="pPb-BL-Ut8">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <searchBar contentMode="redraw" id="s4p-a8-qPm">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="COUPON" id="tl2-sH-tkD">
+                        <barButtonItem key="leftBarButtonItem" title="check" id="d5B-j1-Eln">
+                            <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="check:" destination="zyj-iR-6cz" id="sZf-JT-YdW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="refresh" id="v1O-1I-gK2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refresh:" destination="zyj-iR-6cz" id="7AZ-uL-HDR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="webView" destination="pPb-BL-Ut8" id="Y1u-SJ-4gf"/>
+                        <segue destination="y2j-ZA-qQO" kind="push" identifier="detail" id="Ntc-mA-TAg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1872" y="-13"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BXe-xs-TMB">
+            <objects>
+                <viewController id="y2j-ZA-qQO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QIa-fy-vsD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XMr-FY-7ff"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uog-70-fQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2400" y="-30"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="amS-uI-A4w">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJm-pv-77b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkF-lz-sgF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VOQ-Z2-79U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zyj-iR-6cz" kind="relationship" relationship="rootViewController" id="CcN-Gf-ZjO"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1346" y="-13"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
