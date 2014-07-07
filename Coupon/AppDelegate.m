@@ -14,7 +14,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UITabBar appearance] setTintColor:barColor];
-    [[UINavigationBar appearance] setBarTintColor:barColor];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

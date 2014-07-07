@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA5B4813196A9FB5004BCA75 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B4812196A9FB5004BCA75 /* BaseViewController.m */; };
 		FAD1C7A01965421900BD7C3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD1C79F1965421900BD7C3A /* Foundation.framework */; };
 		FAD1C7A21965421900BD7C3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD1C7A11965421900BD7C3A /* CoreGraphics.framework */; };
 		FAD1C7A41965421900BD7C3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD1C7A31965421900BD7C3A /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA5B4811196A9FB5004BCA75 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FA5B4812196A9FB5004BCA75 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		FAD1C79C1965421900BD7C3A /* Coupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD1C79F1965421900BD7C3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAD1C7A11965421900BD7C3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +155,8 @@
 				FAD1C7B11965421900BD7C3A /* Main.storyboard */,
 				FAD1C7B41965421900BD7C3A /* ViewController.h */,
 				FAD1C7B51965421900BD7C3A /* ViewController.m */,
+				FA5B4811196A9FB5004BCA75 /* BaseViewController.h */,
+				FA5B4812196A9FB5004BCA75 /* BaseViewController.m */,
 				FAD1C7B71965421900BD7C3A /* Images.xcassets */,
 				FAD1C7A61965421900BD7C3A /* Supporting Files */,
 			);
@@ -348,6 +353,7 @@
 				FAD1C7EC1965424400BD7C3A /* Seaport.m in Sources */,
 				FAD1C7AC1965421900BD7C3A /* main.m in Sources */,
 				FAD1C7ED1965424400BD7C3A /* SeaportHttp.m in Sources */,
+				FA5B4813196A9FB5004BCA75 /* BaseViewController.m in Sources */,
 				FAD1C7EE1965424400BD7C3A /* SeaportWebViewBridge.m in Sources */,
 				FAD1C7EF1965424400BD7C3A /* ioapi.c in Sources */,
 				FAD1C7F31965424400BD7C3A /* SSZipArchive.m in Sources */,
