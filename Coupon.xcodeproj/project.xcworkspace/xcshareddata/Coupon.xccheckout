@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>04F44691-3F23-4FDA-8133-266EA450BAF6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Coupon</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CED2F871-00EC-42B0-A27A-CB22BF3108A4</key>
+		<string>http://git.oschina.net/ltebean/Coupon.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Coupon.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CED2F871-00EC-42B0-A27A-CB22BF3108A4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://git.oschina.net/ltebean/Coupon.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CED2F871-00EC-42B0-A27A-CB22BF3108A4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CED2F871-00EC-42B0-A27A-CB22BF3108A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Coupon</string>
+		</dict>
+	</array>
+</dict>
+</plist>

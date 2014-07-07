@@ -12,11 +12,12 @@
 #import "SeaportWebViewBridge.h"
 #define barColor [UIColor colorWithRed:253/255.0f green:100/255.0f blue:84/255.0f alpha:1.0f ]
 
-@interface ViewController  () <UIWebViewDelegate,SeaportDelegate>
+@interface ViewController  () <UIWebViewDelegate,SeaportDelegate,UISearchBarDelegate>
 @property (nonatomic,strong) Seaport* seaport ;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (strong, nonatomic) UISearchBar *searchBar;
 @property(strong,nonatomic) SeaportWebViewBridge *bridge;
+@property(nonatomic,strong) UIToolbar* overlay;
+@property (strong, nonatomic) UISearchBar *searchBar;
 @property BOOL loaded;
 @end
 
@@ -38,10 +39,29 @@
     self.searchBar = [[UISearchBar alloc] initWithFrame:self.view.bounds];
     [self.searchBar sizeToFit];
     self.searchBar.barTintColor=barColor;
+    self.searchBar.delegate=self;
     self.navigationItem.titleView = self.searchBar;
-
+    
+    self.overlay = [[UIToolbar alloc] initWithFrame:self.view.bounds];
+    [self.view addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(overlayClicked:)]];
 }
 
+- (void)overlayClicked:(UITapGestureRecognizer *)recognizer {
+    [self.overlay removeFromSuperview];
+    [self.searchBar resignFirstResponder];
+}
+
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+
+{
+    [self.view addSubview:self.overlay];
+}
+
+- (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.overlay removeFromSuperview];
+    [self.searchBar resignFirstResponder];
+}
 
 -(void) viewWillAppear:(BOOL)animated  {
     [super viewWillAppear:animated];
@@ -49,8 +69,6 @@
         [self refresh:nil];
         self.loaded=YES;
     }
-
-    
 }
 - (IBAction)refresh:(id)sender {
     
@@ -63,8 +81,11 @@
         
         NSURLRequest *request=[NSURLRequest requestWithURL:debugURL];
         [self.webView loadRequest:request];
+        
+       
     }
 }
+
 
 
 - (IBAction)check:(id)sender {
