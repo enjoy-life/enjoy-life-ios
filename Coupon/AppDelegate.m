@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#define barColor [UIColor colorWithRed:243/255.0f green:90/255.0f blue:74/255.0f alpha:1.0f ]
+#define barColor [UIColor colorWithRed:218/255.0f green:85/255.0f blue:47/255.0f alpha:1.0f ]
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

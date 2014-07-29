@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     if(!self.navBarTintColor){
-        self.navBarTintColor=[UIColor colorWithRed:253/255.0f green:100/255.0f blue:84/255.0f alpha:1.0f ];
+        self.navBarTintColor=[UIColor colorWithRed:218/255.0f green:85/255.0f blue:47/255.0f alpha:1.0f ];
     }
     
     [self.navigationController.navigationBar setBarTintColor:self.navBarTintColor];
@@ -45,6 +45,33 @@
     [self.view addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(overlayClicked:)]];
 }
 
+-(void) loadPage:(NSString*) page inWebView :(UIWebView*) webView
+{
+    NSString *rootPath = [self.seaport packagePath:@"all"];
+    NSString *fileName=[page stringByAppendingString:@".html"];
+    if(rootPath){
+        NSString *filePath = [rootPath stringByAppendingPathComponent:fileName];
+        NSURL *localURL=[NSURL fileURLWithPath:filePath];
+        
+        NSURL *debugURL=[NSURL URLWithString:[@"http://localhost:8080/" stringByAppendingString:fileName]];
+        
+        NSURLRequest *request=[NSURLRequest requestWithURL:debugURL];
+        [webView loadRequest:request];
+    }else{
+//        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:page ofType:@"html" inDirectory:@"/build"]];
+//        [webView loadRequest:[NSURLRequest requestWithURL:url]];
+        NSURL *debugURL=[NSURL URLWithString:[@"http://localhost:8080/" stringByAppendingString:fileName]];
+
+    }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    BaseViewController* vc= segue.destinationViewController;
+    vc.param=sender;
+}
+
+
 - (void)overlayClicked:(UITapGestureRecognizer *)recognizer {
     [self.overlay removeFromSuperview];
     [self.searchBar resignFirstResponder];
@@ -61,6 +88,8 @@
     [self.overlay removeFromSuperview];
     [self.searchBar resignFirstResponder];
 }
+
+
 
 -(void)seaport:(Seaport*)seaport didStartDownloadPackage:(NSString*) packageName version:(NSString*) version
 {

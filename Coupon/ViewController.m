@@ -36,16 +36,7 @@
 }
 - (IBAction)refresh:(id)sender {
     
-    NSString *rootPath = [self.seaport packagePath:@"all"];
-    if(rootPath){
-        NSString *filePath = [rootPath stringByAppendingPathComponent:@"index.html"];
-        NSURL *localURL=[NSURL fileURLWithPath:filePath];
-        
-        NSURL *debugURL=[NSURL URLWithString:@"http://localhost:8080/index.html"];
-        
-        NSURLRequest *request=[NSURLRequest requestWithURL:debugURL];
-        [self.webView loadRequest:request];
-    }
+    [self loadPage:@"index" inWebView:self.webView];
 }
 
 

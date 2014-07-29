@@ -13,5 +13,8 @@
 @interface BaseViewController : UIViewController
 @property (nonatomic,strong) Seaport* seaport ;
 @property(strong,nonatomic) SeaportWebViewBridge *bridge;
+@property(strong,nonatomic) NSDictionary* param;
+-(void) loadPage:(NSString*) page inWebView :(UIWebView*) webView;
+
 @property(nonatomic)UIColor* navBarTintColor;
 @end
